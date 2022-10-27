@@ -1,0 +1,18 @@
+//create an array of 10 numbers.verify using pointer arithmetic that (ptr+2)
+//points to third element where ptr is a pointer pointing to the first element of the array.
+
+#include <stdio.h>
+
+int
+main ()
+{
+  int a[3];
+  int *ptr=a;
+  a[0]=1;
+  a[1]=2;
+  a[2]=3;
+  printf("The value of ptr before arithmetic: %d\n",*ptr);
+  ptr=ptr+2;
+  printf("The value of ptr after operation: %d",*ptr);
+  return 0;
+}
