@@ -1,0 +1,37 @@
+//normal method
+#include <stdio.h>
+int main()
+{
+    int a[]={1,2,3,5,6};
+    int len = sizeof(a)/sizeof(a[0]);
+    printf("Before reversing : ");
+    for(int i=0;i<len;i++){
+        printf("%d ",a[i]);
+    }
+    printf("\nAfter reversing: ");
+    for(int i= len-1;i>=0;i--){
+        printf("%d ",a[i]);
+    }
+    return 0;
+}
+**********************************************
+//using function
+#include <stdio.h>
+void reverse(int b[],int n){
+    int temp;
+    for(int i=0;i<n/2;i++){
+        temp=b[i];
+        b[i]=b[n-i-1];
+        b[n-i-1]=temp;
+    }
+    for(int i=0;i<n;i++){
+        printf("%d ",b[i]);
+    }
+    
+}
+int main()
+{
+    int a[]={1,2,3,4,5,6,7,8,9};
+    reverse(a,10);
+    return 0;
+}
