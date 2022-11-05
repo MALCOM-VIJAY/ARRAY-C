@@ -69,5 +69,7 @@ OUTPUT:
         a[i]=a[j];
         a[j]=temp;
     }
+    INPUT:
+    1234567
     OUTPUT:
     1 2 3 7 6 5 4 
