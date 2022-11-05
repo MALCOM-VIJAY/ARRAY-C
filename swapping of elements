@@ -1,0 +1,51 @@
+//swapping of adjacent elements
+#include <stdio.h>
+
+int main()
+{
+    int a[]={63,1,25,87,0,5},temp;
+    for(int i=0;i<5;i+=2){
+        temp = a[i];
+        a[i] = a[i+1];
+        a[i+1]= temp;
+    }
+    printf("Adjacent swapping:"); 
+    for(int i=0;i<6;i++){
+        printf(" %d",a[i]);
+    }
+    return 0;
+}
+****************************************************
+//swapping of elements using pointer
+#include <stdio.h>
+
+int main()
+{
+    int a[]={63,1,25,87,0},c,temp;
+    temp = *(a+1);
+    *(a+1) = *(a+3);
+    *(a+3)= temp;
+    printf("Swapped values : %d %d\n",*(a+1),*(a+3));
+    printf("After swapping : ");
+    for(int i=0;i<5;i++){
+        printf("%d ",a[i]);
+    }
+    return 0;
+}
+**********************************************
+//swapping using normal array
+#include <stdio.h>
+
+int main()
+{
+    int a[]={63,1,25,87,0},c,temp;
+    temp = a[1];
+    a[1] = a[3];
+    a[3]= temp;
+    printf("Swapped values : %d %d\n",a[1],a[3]);
+    printf("After swapping : ");
+    for(int i=0;i<5;i++){
+        printf("%d ",a[i]);
+    }
+    return 0;
+}
