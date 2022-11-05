@@ -53,3 +53,21 @@ int main()
     }
     return 0;
 }
+**********************************************************
+//reversing the first half
+  for(int i=0,j=(len/2)-1;i<len/4;i++,j--){
+        temp = a[i];
+        a[i]=a[j];
+        a[j]=temp;
+    }
+OUTPUT:
+3 2 1 4 5 6 
+***********************************************************
+//reversing the second half
+ for(i=len/2,j=len-1;i<j;i++,j--){
+        temp = a[i];
+        a[i]=a[j];
+        a[j]=temp;
+    }
+    OUTPUT:
+    1 2 3 7 6 5 4 
