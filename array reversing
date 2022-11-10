@@ -14,6 +14,23 @@ int main()
     }
     return 0;
 }
+*****************
+#include <stdio.h>
+int main()
+{
+    int b[]={63,1,25,87};
+    int n = sizeof(b)/sizeof(b[0]);
+    int t[n],j=n-1;
+       for(int i=0;i<n;i++){
+        t[i] = b[j];
+        j--;
+    }
+     for(int j=0;j<n;j++){
+        b[j]=t[j];
+         printf("%d ",b[j]);
+    }
+    return 0;
+}
 **********************************************
 //using function
 #include <stdio.h>
