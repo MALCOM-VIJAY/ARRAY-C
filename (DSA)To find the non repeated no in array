@@ -1,0 +1,56 @@
+//BEST USINF XOR GATE
+
+
+
+*******************************************
+//C
+for(int i = 0;i<n;i++){
+        int count =0;
+        for(int j=0;j<n;j++){
+            if(a[i]==a[j]){
+                count++;
+            }
+        }
+        if(count==1){
+            printf("%d",a[i]);
+        }
+*********************************************
+//C++//USING SORT AND VECTOR
+class Solution {
+public:
+    int singleNumber(vector<int>& a) {
+        int n=a.size();
+        sort(a.begin(),a.end());
+        for(int i=0;i<n-1;i+=2){
+            if(a[i]!=a[i+1])
+                return a[i];
+        }
+        return a[n-1];
+        
+        
+    }
+};
+*************************************************
+//UNORDERED MAP
+class Solution {
+public:
+    int singleNumber(vector<int>& a) {
+        unordered_map<int,int>m;
+        for(auto i : a){
+            m[i]=m[i]+1;
+        }
+        for(auto i : m){
+            if(i.second==1)
+                return i.first;
+        }
+            return 0;
+    }
+
+};
+**************************************************
+//INPUT :
+{8,3,5,8,5}
+OUTPUT:
+3
+        
+  
