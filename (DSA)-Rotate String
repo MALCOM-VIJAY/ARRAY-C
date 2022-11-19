@@ -1,0 +1,14 @@
+//C++:
+
+class Solution {
+public:
+    bool rotateString(string s, string goal) {
+        for(auto i : s){
+            reverse(s.begin(),s.end());
+            reverse(s.begin()+1,s.end());
+            if(!s.compare(goal))return true;
+        }
+        return false;
+    }
+    
+};
