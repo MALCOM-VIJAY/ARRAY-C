@@ -1,0 +1,39 @@
+//Normal c:
+#include <stdio.h>
+
+int main() {
+    int a[]={0,1,0,0,1,0};
+    int zc=0;
+    int n = sizeof(a)/sizeof(a[0]);
+    for(int i=0;i<n;i++){
+        if(a[i]==0){
+            zc++;
+        }
+    }
+    for(int i=0;i<zc;i++){
+        a[i]= 0;
+    }
+    for(int i = zc;i<n;i++){
+        a[i]=1;
+    }
+    for(int i = 0;i<n;i++){
+        printf("%d ",a[i]);
+    }
+    return 0;
+}
+**************************************
+//C++ SWAP:int main() {
+    int a[]={0,1,0,0,1,0};
+    int zi=0;
+    int n = sizeof(a)/sizeof(a[0]);
+    for(int i =0;i<n;i++){
+        if(a[i]==0){
+        swap(a[i],a[zi]);
+        ++zi;
+        }
+    }
+    for(int i = 0;i<n;i++){
+        cout<<a[i];
+    }
+    return 0;
+}
