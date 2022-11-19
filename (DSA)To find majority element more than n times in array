@@ -1,0 +1,51 @@
+//normal C - (TIME LIMIT  EXCEEDED)
+for(int i=0;i<n;i++){
+        int count = 1;
+        for(int j =1;j<n;j++){
+            if(a[i]==a[j])
+                count++;
+        }
+        if(count>n/2)
+            return a[i];
+    }
+    return 0;
+    ******************************
+//UNORDERED MAP:
+int majorityElement(vector<int>& a) {
+        unordered_map<int,int>m;
+        int n = a.size();
+        for(auto i : a){
+            m[i]=m[i]+1;
+        }
+        for(auto i : m){
+            if(i.second > n/2)
+                return i.first;
+        }
+        return  0;
+    }
+***************************************
+//SLIDING WINDOW TECHNIQUE:
+int majorityElement(vector<int>& a) {
+        sort(a.begin(),a.end());
+        int n = a.size();
+        for(int i=0;i<(n+1)/2;i++){
+            if(a[i]==a[i+n/2]){
+                return a[i];
+            }
+        }
+        return  0;
+    }
+ **************************************
+ //MOORE VOTING ALGORITHM
+ int majorityElement(int* a, int n){
+    int voter = a[0],vc = 1;
+    for(int i=1;i<n;i++){
+        if(voter ==a[i])++vc;
+        else --vc;
+        if(vc ==0){
+            voter = a[i];
+            vc =1;
+        }
+    }
+    return voter;
+}
