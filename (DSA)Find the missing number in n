@@ -1,0 +1,55 @@
+//normal C (worst case)
+ for(int i=0;i<=n;i++){
+        int count =0;
+        for(int j=0;j<n;j++){
+            if(a[j]==i){
+                count=1;
+                break;
+            }
+            }
+        if(count == 0){
+                return i;
+        }
+
+    }
+    ***************************************************
+//UNORDERED MAP:
+int missingNumber(vector<int>& a) {
+        int n=a.size();
+        unordered_map <int,int> m;
+        for(auto i : a){
+            m[i]=1;
+        }
+        for (int i=0;i<=n;i++){
+            if(m[i]==0)
+                return i;
+        }
+            return 0;
+        
+    }
+    ****************************************************
+//SORTING : 
+int n=a.size();
+        sort(a.begin(),a.end());
+        for (int i=0;i<n;i++){
+            if(a[i]!=i)
+                return i;
+        }
+            return n;
+        
+    }
+    ********************************************************
+//MATH
+int res = 0;
+        int n=a.size();
+        for (auto i : a){
+            res = res+i;
+        }
+        return (n*(n+1))/2 - res;
+        
+    }
+
+
+Input: nums = [3,0,1]
+Output: 2
+Explanation: n = 3 since there are 3 numbers, so all numbers are in the range [0,3]. 2 is the missing number in the range since it does not appear in nums.
