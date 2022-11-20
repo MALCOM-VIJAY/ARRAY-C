@@ -1,0 +1,23 @@
+//LINEAR SEARCH
+#include <iostream>
+
+using namespace std;
+int main ()
+{
+  int t, ta, a[50];
+  cin>>t;
+  for (int i = 0; i < t; i++)
+    {
+      cin >> a[i];
+    }
+  cin >> ta;
+  for (int i = 1;i<t; i++)
+    {
+      if (a[i] == ta)
+	{
+	  cout << "value found at : " << i;
+	}
+    }
+
+  return 0;
+}
