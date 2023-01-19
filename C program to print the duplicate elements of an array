@@ -16,3 +16,18 @@ int main()
     printf("Totally %d numbers are repeated",sum);
     return 0;
 }
+
+//OPTIMISED SOLUTION
+int slow=a[0];
+int fast=a[0];
+do{
+slow=a[slow];
+fast=a[a[fast]];
+}while(slow!=fast);
+fast=a[0];
+while(slow!=fast){
+slow=a[slow];
+fast=a[fast];
+}
+return slow;//or also fast bcoz both points at the same place
+}
