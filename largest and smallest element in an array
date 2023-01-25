@@ -1,3 +1,26 @@
+To find the second maximum element in the array:
+#include<stdio.h>//pre processed things
+#include<limits.h>
+int main()//entry point
+{
+      int a []={10,20,25,30,12,4,5,6};//valid
+      int n=sizeof(a)/sizeof(a[0]);
+      int fst_max,second_max;
+      fst_max=second_max=INT_MIN;
+      for(int i=0;i<n;i++){
+          if(a[i]>fst_max){
+              second_max=fst_max;
+              fst_max=a[i];
+          }
+          else if( second_max<a[i])
+            second_max=a[i];
+      }
+      printf("first: %d and second: %d",fst_max,second_max);
+
+
+    return 0;
+}
+***************************************************************************************
 //sort the array first and then  find the smallest number based on the input
 #include <stdio.h>
 
